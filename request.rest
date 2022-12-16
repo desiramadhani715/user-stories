@@ -1,27 +1,37 @@
-GET http://localhost:5000/users
 
-###
-GET http://localhost:5000/users/1
-
-###
-POST http://localhost:5000/users
+### 1
+POST localhost:5000/api/register
 Content-Type: application/json
-
 {
-    "name": "John Doe",
-    "email": "john@gmail.com",
-    "gender": "Male"
+    "email": ["lisa@gmail.com","lia@gmail.com"]
 }
 
-###
-PATCH http://localhost:5000/users/1
+### 2
+POST localhost:5000/api/assign
 Content-Type: application/json
-
 {
-    "name": "M Fikri",
-    "email": "mfikri@gmail.com",
-    "gender": "Male"
+    "email" : "desi@gmail.com",
+    "task" : [
+        "buy egg",
+        "buy milk",
+        "eat"
+    ]
 }
 
-###
-DELETE http://localhost:5000/users/2
+### 3
+POST localhost:5000/api/unassign
+Content-Type: application/json
+{
+    "email" : "desi@gmail.com",
+    "task" : [
+        "eat"
+    ]
+}
+
+### 4
+GET localhost:5000/api/tasks/common
+Content-Type: application/json
+{
+    "email" : ["eci@gmail.com","desi@gmail.com"]
+}
+
